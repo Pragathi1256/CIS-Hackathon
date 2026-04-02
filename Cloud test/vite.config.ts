@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: "/repository-name/",   // ADD THIS LINE
+   base: "/CIS-Hackathon/",// ADD THIS LINE
 
   server: {
     host: "::",
