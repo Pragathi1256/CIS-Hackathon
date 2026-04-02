@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 export default defineConfig({
-  base: "/CIS-Hackathon/",   // IMPORTANT: your GitHub repository name
+  base: "CIS-Hackathon",   // IMPORTANT: your GitHub repository name
 
   server: {
     host: true,
