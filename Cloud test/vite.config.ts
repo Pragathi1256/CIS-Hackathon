@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // Vite config for GitHub Pages deployment
 export default defineConfig({
-  base: '/CIS-Hackathon/', // Important: repository name as the base path
+  base: '/Cloud test/', // Important: repository name as the base path
   plugins: [react()],
   server: {
     port: 5173, // optional: default Vite dev server port
