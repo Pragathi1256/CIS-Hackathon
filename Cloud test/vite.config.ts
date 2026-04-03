@@ -6,7 +6,7 @@ export default defineConfig({
   base: '/Cloud test/', // Important: repository name as the base path
   plugins: [react()],
   server: {
-    port: 5173, // optional: default Vite dev server port
+    port: 8080, // optional: default Vite dev server port
   },
   build: {
     outDir: 'dist', // folder that will be deployed
