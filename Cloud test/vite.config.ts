@@ -1,14 +1,23 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import path from "path";
+import { componentTagger } from "lovable-tagger";
 
-// Vite config for GitHub Pages deployment
-export default defineConfig({
-  base: '/Cloud test/', // Important: repository name as the base path
-  plugins: [react()],
+// https://vitejs.dev/config/
+export default defineConfig(({ mode }) => ({
   server: {
-    port: 8080, // optional: default Vite dev server port
+    host: "::",
+    port: 8080,
+    hmr: {
+      overlay: false,
+    },
   },
-  build: {
-    outDir: 'dist', // folder that will be deployed
+  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+    dedupe: ["react", "react-dom", "react/jsx-runtime", "react/jsx-dev-runtime"],
   },
-})
+}));
+
