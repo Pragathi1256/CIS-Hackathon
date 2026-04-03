@@ -1,24 +1,14 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import path from "path";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
+// Vite config for GitHub Pages deployment
 export default defineConfig({
-  base: "/CIS-Hackathon/",   // IMPORTANT: your GitHub repository name
-
-  server: {
-    host: true,
-    port: 8080,
-  },
-
+  base: '/CIS-Hackathon/', // Important: repository name as the base path
   plugins: [react()],
-
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
+  server: {
+    port: 5173, // optional: default Vite dev server port
   },
-
   build: {
-    outDir: "dist",
+    outDir: 'dist', // folder that will be deployed
   },
-});
+})
